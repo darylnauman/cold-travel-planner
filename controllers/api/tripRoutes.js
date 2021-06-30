@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Trip, Destination, TripDestinationJoin} = require('../../models');
+const { Trip, Destination} = require('../../models');
 
 // The `/api/trip` endpoint
 

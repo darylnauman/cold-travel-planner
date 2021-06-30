@@ -9,6 +9,4 @@ router.use('/trips', tripRoutes);
 router.use('/comments', commentRoutes);
 router.use('/destinations', destinationRoutes);
 
-
-
 module.exports = router;
