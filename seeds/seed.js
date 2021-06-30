@@ -2,14 +2,12 @@ const sequelize = require('../config/connection');
 const User = require('../models/User')
 const Destination = require('../models/Destination');
 const Trip = require('../models/Trip');
-const JoinTrips = require('../models/TripDestinationJoin');
 const Comment = require('../models/Comment');
 
 const userData = require('./userData.json');
 const destinationData = require('./destinationData.json');
 const tripData = require('./tripData.json');
 const commentData = require('./commentData.json')
-const jointData = require('./jointData.json');
 
   const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -32,10 +30,7 @@ const jointData = require('./jointData.json');
     individualHooks: true,
     returning: true,
   })
-  await JoinTrips.bulkCreate(jointData, {
-    individualHooks: true,
-    returning: true,
-  })
+ 
 
   process.exit(0);
 };
