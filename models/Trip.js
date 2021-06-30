@@ -14,29 +14,37 @@ Trip.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        start_date: {
+            type: DataTypes.DATEONLY,
+            allowNull: false
+        },
+        end_date: {
+            type: DataTypes.DATEONLY,
+            allowNull: false
+        },
         trip_budget:{
             type: DataTypes.DECIMAL(10,2),
-            allowNull: false,
+            allowNull: false
         },
         hotel_cost:{
             type: DataTypes.DECIMAL(10,2),
-            allowNull: true,
+            allowNull: true
         },
         food_cost:{
             type: DataTypes.DECIMAL(10,2),
-            allowNull: true,
+            allowNull: true
         },
         ent_cost:{
             type: DataTypes.DECIMAL(10,2),
-            allowNull: true,
+            allowNull: true
         },
         misc_cost:{
             type: DataTypes.DECIMAL(10,2),
-            allowNull: true,
+            allowNull: true
         },
         transport_cost:{
             type: DataTypes.DECIMAL(10,2),
-            allowNull: true,
+            allowNull: true
         },
         user_id:{
             type: DataTypes.INTEGER,
