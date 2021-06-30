@@ -50,28 +50,6 @@ router.post('/', async (req, res) => {
     }
 
 
-
-//   Trip.create(req.body)
-//     .then((trip) => {
-//       // if there are trips, we need to create pairings to bulk create in the TripDestinationJoin model
-//       if (req.body.TripDestinationJoin && req.body.TripDestinationJoin.length) {
-
-//         const tripDestination = req.body.TripDestinationJoin.map((destination_id) => {
-//           return {
-//             trip_id: trip.id,
-            
-//           };
-//         });
-//         return TripDestinationJoin.bulkCreate(tripDestination);
-//       }
-      
-//       res.status(200).json(trip);
-//     })
-//     .then((tripDestinationIds) => res.status(200).json(tripDestinationIds))
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(400).json(err);
-//     });
 });
 
 
