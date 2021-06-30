@@ -1,0 +1,52 @@
+[
+    {
+      "trip_budget": 5500.00,
+      "hotel_cost": 500.00,
+      "food_cost": 350.00,
+      "ent_cost": 500.00,
+      "misc_cost": 129.95,
+      "transport_cost": 2000.00,
+      "user_id": 1
+    },
+    {
+        "trip_budget": 15000.00,
+        "hotel_cost": 2500.00,
+        "food_cost": 750.00,
+        "ent_cost": 1500.00,
+        "misc_cost": 450.00,
+        "transport_cost": 3000.00,
+        "user_id": 4
+ 
+      },
+      {
+        "trip_budget": 1200.00,
+        "hotel_cost": 250.00,
+        "food_cost": 250.00,
+        "ent_cost": 400.00,
+        "misc_cost": 400.00,
+        "transport_cost": 150.00,
+        "user_id": 3
+   
+      },
+      {
+        "trip_budget": 6000.00,
+        "hotel_cost": 1800.00,
+        "food_cost": 450.00,
+        "ent_cost": 100.00,
+        "misc_cost": 69.99,
+        "transport_cost": 2000.00,
+        "user_id": 5
+      },
+      {
+        "trip_budget": 1000.00,
+        "hotel_cost": 120.00,
+        "food_cost": 250.00,
+        "ent_cost": 125.00,
+        "misc_cost": 45.00,
+        "transport_cost": 50.00,
+        "user_id": 2
+    
+      }
+   
+  ]
+  

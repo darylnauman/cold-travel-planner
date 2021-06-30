@@ -5,7 +5,6 @@ const sequelize = require('../config/connection');
 class Comment extends Model {
 
 }
-
 Comment.init(
     {
        id:{
@@ -17,6 +16,7 @@ Comment.init(
        content:{
            type: DataTypes.STRING,
            allowNull: false,
+           defaultValue: ''
            
        },
        user_id:{
