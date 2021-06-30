@@ -36,7 +36,6 @@ Destination.hasMany(Comment,{
 
 //you are going to get all the comments of a specific user of a certain location
 
-
 // has Trip{
 // foreignkeydestination
 // foreignkeydestination
@@ -47,6 +46,5 @@ Destination.hasMany(Comment,{
 // }
 
 // trip - has user, destination associated with it, total cost returned
-
 
 module.exports = {User, Destination, Trip, Comment};
