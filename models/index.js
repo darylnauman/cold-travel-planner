@@ -1,7 +1,7 @@
-// const User = require('./User')
-// const Destination = require('./Destination')
-// const Trip = require('./Trip')
-// const Comment = require('./Comment')
+const User = require('./User')
+const Destination = require('./Destination')
+const Trip = require('./Trip')
+const Comment = require('./Comment')
 
 // // User.belongsToMany(Destination, {
 // //     through:model Trip
@@ -33,4 +33,4 @@
 // //trip - has user, destination associated with it, total cost returned
 // //
 
-// module.exports = {User, Destination, Trip, Comment};
+module.exports = {User, Destination, Trip, Comment};
