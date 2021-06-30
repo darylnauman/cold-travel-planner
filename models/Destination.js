@@ -25,21 +25,21 @@ Destination.init(
                 key: 'id'
             }
         },
-        comment_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'comment',
-                key: 'id'
-            }
+        // comment_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'comment',
+        //         key: 'id'
+        //     }
+        // },
+        // trip_id:{
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'trip',
+        //         key: 'id'
+        //     }
         },
-        trip_id:{
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'trip',
-                key: 'id'
-            }
-        }
-    },
+    
     {
         sequelize,
         timestamps: false,
