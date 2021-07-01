@@ -46,7 +46,7 @@ Trip.init(
             type: DataTypes.DECIMAL(10,2),
             allowNull: true
         },
-        user_id:{
+         user_id:{
             type: DataTypes.INTEGER,
             references:{
                 model: "user",

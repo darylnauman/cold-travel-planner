@@ -25,6 +25,28 @@ router.get('/', async (req, res) => {
 });
 
 
+router.get('/user/:id', async (req, res) => {
+  try {
+    const userTripData = await Trip.findAll({
+      where:{
+        user_id: req.params.id
+      },
+        include:{
+        model:Destination,
+        attributes: ['location_name'],
+      }     
+
+    });
+
+    const userTrips = userTripData.map((userTrip) => userTrip.get({ plain: true }));
+console.log(userTrips)
+    res.render('user', { userTrips });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 // router.get('/', async (req, res) => {
 //   try {
 //     // Get all Destination data
