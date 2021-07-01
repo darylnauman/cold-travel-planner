@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Destination } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
@@ -14,14 +14,13 @@ router.get('/', async (req, res) => {
       res.status(404).json({message: 'No destination data!'});
       return;
     }
-    res.status(200).json(destinationData);
+    // res.status(200).json(destinationData);
 
     // pass serialized data and session flag into template
-    // res.render('homepage', {
-    //   page_title: 'Home Page',
-    //   destinations,
-    //   logged_in: req.session.logged_in
-    // });
+    res.render('destinations', {
+      destinations,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     res.status(500).json(err)
   }
