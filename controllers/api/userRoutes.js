@@ -1,6 +1,30 @@
 const router = require('express').Router();
 const  User  = require('../../models/User');
 
+
+
+// need to add withAuth in here
+router.get('/:id',async (req, res) => {
+ 
+  try{
+    const userData = await User.findByPk(req.params.id, {
+
+    });
+    if(!userData) {
+      res.status(404).json({message: 'No user matches your search, Daryl!'});
+      
+    } else{
+    res.status(200).json(userData);
+    }
+  }catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+
+
+
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
