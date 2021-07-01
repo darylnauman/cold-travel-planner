@@ -1,7 +1,26 @@
 const router = require('express').Router();
 const  User  = require('../../models/User');
 
+// CREATE new user
+router.post('/', async (req, res) => {
+  console.log(req.body)
+  try {
+    const userData = await User.create({
+      name: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
+    });
 
+    req.session.save(() => {
+      req.session.logged_in = true;
+
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 // need to add withAuth in here
 router.get('/:id',async (req, res) => {
