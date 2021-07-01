@@ -22,6 +22,15 @@ User.hasMany(Trip, {
 //     onDelete: "CASCADE"
 // })
 
+Destination.hasMany(Trip, {
+    foreignKey: "destination_id",
+    onDelete: 'CASCADE'
+})
+
+Trip.belongsTo(Destination, {
+    foreignKey: "destination_id"
+})
+
 
 Comment.belongsTo(User, {
     foreignKey: "user_id",
