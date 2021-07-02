@@ -1,20 +1,35 @@
-const tripDetailsFormHandler = async (event) => {
+const newTripFormHandler = async (event) => {
   event.preventDefault();
   
-  const destination_id = document.querySelector('#trip-destination_ID').value;
+  console.log('In newTripFormHandler');
+
+  const start_date = document.querySelector('#start-date').value;
+  const end_date = document.querySelector('#end-date').value;
   const trip_budget = document.querySelector('#trip-budget').value;
   const hotel_cost = document.querySelector('#hotel-cost').value;
   const food_cost = document.querySelector('#food-cost').value;
-  const ent_cost = document.querySelector('#entertainment-cost').value;
+  const ent_cost = document.querySelector('#ent-cost').value;
   const misc_cost = document.querySelector('#misc-cost').value;
+  const transport_cost = document.querySelector('#transport-cost').value;
+  const destination_id = document.querySelector('#trip-destination_ID').value;
 
-  if (destination_id && trip_budget && hotel_cost && food_cost && ent_cost && misc_cost) {
+  if (start_date && end_date && trip_budget && destination_id) {
     
     console.log('sending POST request to the API endpoint to create a blog post');
     
     const response = await fetch('/api/trips', {
       method: 'POST',
-      body: JSON.stringify({ postTitle, postContent }), //req.body.postTitle, req.body.postContent
+      body: JSON.stringify({
+        start_date,
+        end_date,
+        trip_budget,
+        hotel_cost,
+        food_cost,
+        ent_cost,
+        misc_cost,
+        transport_cost,
+        destination_id,
+      }),  
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -27,5 +42,5 @@ const tripDetailsFormHandler = async (event) => {
 }
 
 document
-  .querySelector('.tripDetails-form')
-  .addEventListener('submit', tripDetailsFormHandler);
+  .querySelector('.new-trip-form')
+  .addEventListener('submit', newTripFormHandler);

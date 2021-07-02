@@ -7,6 +7,10 @@ router.get('/destinations', async (req, res) => {
   res.render('destinations');
 });
 
+router.get('/add-trip', async (req, res) => {
+  res.render('addtrip');
+});
+
 router.get('/', async (req, res) => {
   try {
     const userData = await User.findAll({
