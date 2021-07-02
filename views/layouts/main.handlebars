@@ -25,14 +25,22 @@
         <a class="nav-link" href="/destinations">Destinations</a>
       </li>
       {{#if logged_in}}
+      
       <li class="nav-item">
         <a class="nav-link" href="/past-trips">Past Trips</a>
       </li>
-            <li class="nav-item">
+      
+      <li class="nav-item">
         <a class="nav-link" href="/plan-trip">Plan Trip</a>
       </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="/add-trip">Add Trip</a>
+      </li>
+
     </ul>
-     <span class="login"></span>
+     
+      <span class="login"></span>
       <button id="logout" class="btn btn-outline-success my-2 my-sm-0">Logout</button>
       {{else}}
       <a class="btn btn-outline-success my-2 my-sm-0" href="/login">Login</a>
@@ -41,10 +49,9 @@
   </div>
 </nav>
 
-
-      <main>
-            {{{ body }}}
-        </main>
+<main>
+  {{{ body }}}
+</main>
     
 
     <!-- Render script for logged in users only -->
