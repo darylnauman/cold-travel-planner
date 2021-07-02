@@ -8,7 +8,11 @@ router.get('/destinations', async (req, res) => {
 });
 
 router.get('/add-trip', async (req, res) => {
-  res.render('addtrip');
+  res.render('addTrip');
+});
+
+router.get('/add-destination', async (req, res) => {
+  res.render('addDestination');
 });
 
 router.get('/', async (req, res) => {
