@@ -1,4 +1,5 @@
 const router = require('express').Router();
+// const { NUMBER } = require('sequelize/types');
 const { User, Trip, Destination, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -25,7 +26,7 @@ router.get('/', async (req, res) => {
 });
 
 
-router.get('/user/:id', async (req, res) => {
+router.get('/past-trips/:id', async (req, res) => {
   try {
     const userTripData = await Trip.findAll({
       where:{
@@ -38,9 +39,13 @@ router.get('/user/:id', async (req, res) => {
 
     });
 
-    const userTrips = userTripData.map((userTrip) => userTrip.get({ plain: true }));
-console.log(userTrips)
-    res.render('user', { userTrips });
+    const userTrips = userTripData.map((userTrip) => {
+      let tripData =userTrip.get({ plain: true })
+      tripData.tripCost = Number(tripData.hotel_cost) + Number(tripData.food_cost) + Number(tripData.ent_cost) + Number(tripData.misc_cost) + Number(tripData.transport_cost)
+      return tripData;
+    });
+
+    res.render('past-trips', {layout:'any', userTrips:userTrips, userData:req.session.userData, logged_in:req.session.logged_in});
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

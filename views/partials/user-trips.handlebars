@@ -1,13 +1,21 @@
 <section class="card">
-  <!-- The contents of the painting card links to the painting page using the painting ID -->
+
   <a href="/user/{{id}}">
-    <!-- The card contains the painting name as the card header -->
-    <header>{{location_name}}</header>
-    <!-- In the body of the card, the painting is rendered along with the artist name -->
+    <header>{{destination.location_name}}</header>
+
 
     <div class="card-body">
         
-      <p>{{user.name}}'s Trip</p>
+      
+      <p>{{start_date}}</p>
+      <p>{{end_date}}</p>
+      <p>{{trip_budget}} trip budget</p>
+      <p>{{hotel_cost}} Hotel cost</p>
+      <p>{{food_cost}} food cost</p>
+      <p>{{ent_cost}}entertainment cost</p>
+      <p>{{misc_cost}}Misc costs</p>
+      <p>{{transport_cost}}Trasport cost</p>
+      <p>{{tripCost}} trip total</p>
     </div>
   </a>
 </section>
