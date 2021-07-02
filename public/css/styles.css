@@ -1,13 +1,25 @@
-body, html {height: 100%}
-body,h1,h2,h3,h4,h5,h6 {font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif}
-.menu {display: none}
-.bgimg {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("/images/jake-blucker-tMzCrBkM99Y-unsplash.jpg");
-  min-height: 90%;
+.login {
+    float: right;
 }
 
-#login {
-    text-align: left;
+.page-holder {
+    min-height: 100vh;
+}
+  
+.bg-cover {
+    background-size: cover !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.desButton {
+  width: 30%;
+  height: 50px;
+  font-size: 20px;
+}
+
+.navbar {
+    padding-left: 10px;
 }
