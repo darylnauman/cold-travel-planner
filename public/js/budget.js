@@ -18,7 +18,7 @@ let tripExp = []
 const expArr = []
 
 var sumArray = function(expArr) {
-    var result = 0;
+    let result = 0;
   
     for (var i = 0; i < expArr.length; i++) {
       var currentNumber = arr[i];
