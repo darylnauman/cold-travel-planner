@@ -1,7 +1,5 @@
 const newTripFormHandler = async (event) => {
   event.preventDefault();
-  
-  console.log('In newTripFormHandler');
 
   const start_date = document.querySelector('#start-date').value;
   const end_date = document.querySelector('#end-date').value;
@@ -14,8 +12,6 @@ const newTripFormHandler = async (event) => {
   const destination_id = document.querySelector('#trip-destination_ID').value;
 
   if (start_date && end_date && trip_budget && destination_id) {
-    
-    console.log('sending POST request to the API endpoint to create a blog post');
     
     const response = await fetch('/api/trips', {
       method: 'POST',
