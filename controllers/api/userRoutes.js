@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const  User  = require('../../models/User');
+const User = require('../../models/User');
 
 // CREATE new user
 router.post('/', async (req, res) => {
   console.log(req.body)
   try {
     const userData = await User.create({
-      name: req.body.username,
+      name: req.body.name,
       email: req.body.email,
       password: req.body.password,
     });
@@ -22,8 +22,9 @@ router.post('/', async (req, res) => {
   }
 });
 
+
 // need to add withAuth in here
-router.get('/:id',async (req, res) => {
+router.get('/:id', async (req, res) => {
  
   try{
     const userData = await User.findByPk(req.params.id, {
@@ -39,9 +40,6 @@ router.get('/:id',async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
-
 
 
 router.post('/login', async (req, res) => {
@@ -76,6 +74,7 @@ router.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
 
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
