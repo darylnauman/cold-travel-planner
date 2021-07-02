@@ -27,19 +27,30 @@
         <a class="nav-link" href="/destinations">Destinations</a>
       </li>
       {{#if logged_in}}
+      
       <li class="nav-item">
-        <a class="nav-link" href="/past-trips">Past Trips</a>
+        <a class="nav-link" href="/profile">Profile</a>
       </li>
-            <li class="nav-item">
+      
+      <li class="nav-item">
         <a class="nav-link" href="/plan-trip">Plan Trip</a>
       </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="/add-trip">Add Trip</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="/add-destination">Add Destination</a>
+      </li>  
     </ul>
-     <span class="login"></span>
-      <button id="logout" class="btn btn-outline-success my-2 my-sm-0">Logout</button>
-      {{else}}
-      <a class="btn btn-outline-success my-2 my-sm-0" href="/login">Login</a>
-      {{/if}}
-      </span>
+    
+     
+    <button id="logout" class="btn btn-outline-success my-2 my-sm-0">Logout</button>
+    {{else}}
+    <a class="btn btn-outline-success my-2 my-sm-0" href="/login">Login</a>
+    {{/if}}
+     
   </div>
 </nav>
 
