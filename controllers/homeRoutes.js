@@ -100,23 +100,31 @@ router.get('/past-trips/:id/:trgtCur', async (req, res) => {
   }
 });
 
-// router.get('/', async (req, res) => {
-//   try {
-//     // Get all Destination data
-//     const destinationData = await Destination.findAll();
+router.get('/update-trip/:id', async (req, res) => {
+  try {
+    const tripData = await Trip.findByPk(req.params.id, {
+      include: [
+        {
+          model: Destination,
+          attributes: ['location_name'],
+        },
+      ],
+    });
 
-//     // Serialize data
-//     const destinations = destinationData.map((destination) => destination.get({ plain: true}));
+    const trip = tripData.get({ plain: true });
 
+    // const destinationData = await Destination.findAll();
+    // const destinations = destinationData.map((destination) => destination.get({ plain: true}));
 
-//   res.render('homepage', {
-//     posts,
-//   logged_in: req.session.logged_in,
-//   });
-// } catch (err) {
-//   res.status(500).json(err);
-// }
-// });
+    res.render('updateTrip', {
+      ...trip, 
+      // destinations,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
