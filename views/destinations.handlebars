@@ -16,6 +16,18 @@
 
     </header>
   </div>
+  <section class="container">
+  <h3 class="destination-name">{{user.name}} Destinations</h3>
+  <section class="flex-row justify-center">    
+    {{#each destination as |location|}}
+    {{> destination-details}}
+    {{/each}}
+  </section>
+  <div>
+    <p>
+    </p>
+  </div>
+</section>
 </div>
 
 <script src="js/addTrip.js"></script>

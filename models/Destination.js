@@ -17,7 +17,7 @@ Destination.init(
         location_name: {
             type: DataTypes.STRING,
             allowNull: false,
-        }
+        },
         // comment_id: {
         //     type: DataTypes.INTEGER,
         //     references: {
@@ -31,8 +31,8 @@ Destination.init(
         //         model: 'trip',
         //         key: 'id'
         //     }
-        },
-    
+        // },
+    },
     {
         sequelize,
         timestamps: false,

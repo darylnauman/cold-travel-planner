@@ -76,11 +76,11 @@ router.get('/past-trips/:id/:trgtCur', async (req, res) => {
     const userTrips = userTripData.map((userTrip) => {
       let tripData =userTrip.get({ plain: true })
 
-      tripData.hotel_cost = Math.round(Number(tripData.hotel_cost))*targetRate;
-      tripData.food_cost = Math.round(Number(tripData.food_cost))*targetRate;
-      tripData.ent_cost = Math.round(Number(tripData.ent_cost))*targetRate;
-      tripData.misc_cost = Math.round(Number(tripData.misc_cost))*targetRate;
-      tripData.transport_cost = Math.round(Number(tripData.transport_cost))*targetRate;
+      tripData.hotel_cost = Math.round(Number(tripData.hotel_cost)*targetRate);
+      tripData.food_cost = Math.round(Number(tripData.food_cost)*targetRate);
+      tripData.ent_cost = Math.round(Number(tripData.ent_cost)*targetRate);
+      tripData.misc_cost = Math.round(Number(tripData.misc_cost)*targetRate);
+      tripData.transport_cost = Math.round(Number(tripData.transport_cost)*targetRate);
 
       tripData.tripCost = Math.round(Number(tripData.hotel_cost) + Number(tripData.food_cost) + Number(tripData.ent_cost) + Number(tripData.misc_cost) + Number(tripData.transport_cost));
 
@@ -100,6 +100,26 @@ router.get('/past-trips/:id/:trgtCur', async (req, res) => {
   }
 });
 
+router.get('/destinations', async (req, res) => {
+  try {
+    // Get all Destination data
+    const destinationData = await Destination.findAll();
+
+    // Serialize data
+    const getDestinations = destinationData.map((destination) => {
+      let dest = destination.get({ plain: true})
+
+      return dest});
+    console.log(getDestinations)
+    console.log(dest)
+  res.render('destinations', {
+    posts,
+  logged_in: req.session.logged_in,
+  });
+} catch (err) {
+  res.status(500).json(err);
+}
+  
 router.get('/update-trip/:id', async (req, res) => {
   try {
     const tripData = await Trip.findByPk(req.params.id, {
