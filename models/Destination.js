@@ -5,7 +5,6 @@ const sequelize = require('../config/connection');
 class Destination extends Model {
 
 }
-
 Destination.init(
     {
         id: {
@@ -17,22 +16,18 @@ Destination.init(
         location_name: {
             type: DataTypes.STRING,
             allowNull: false,
-        }
-        // comment_id: {
-        //     type: DataTypes.INTEGER,
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
         //     references: {
-        //         model: 'comment',
-        //         key: 'id'
-        //     }
-        // },
-        // trip_id:{
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'trip',
+        //         model: 'user',
         //         key: 'id'
         //     }
         },
-    
+        comment_id: {
+            type: DataTypes.INTEGER,
+ },
+},
     {
         sequelize,
         timestamps: false,
@@ -40,6 +35,7 @@ Destination.init(
         underscored: true,
         modelName: 'destination',
     }
+
 );
 
 module.exports = Destination;
