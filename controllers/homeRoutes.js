@@ -119,6 +119,31 @@ router.get('/destinations', async (req, res) => {
 } catch (err) {
   res.status(500).json(err);
 }
+  
+router.get('/update-trip/:id', async (req, res) => {
+  try {
+    const tripData = await Trip.findByPk(req.params.id, {
+      include: [
+        {
+          model: Destination,
+          attributes: ['location_name'],
+        },
+      ],
+    });
+
+    const trip = tripData.get({ plain: true });
+
+    // const destinationData = await Destination.findAll();
+    // const destinations = destinationData.map((destination) => destination.get({ plain: true}));
+
+    res.render('updateTrip', {
+      ...trip, 
+      // destinations,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get('/login', (req, res) => {
