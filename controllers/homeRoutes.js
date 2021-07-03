@@ -49,7 +49,7 @@ router.get('/', async (req, res) => {
 });
 
 
-router.get('/past-trips/:id/:srcCur/:trgtCur', async (req, res) => {
+router.get('/past-trips/:id/:trgtCur', async (req, res) => {
   try {
     const userTripData = await Trip.findAll({
       where:{
@@ -62,7 +62,7 @@ router.get('/past-trips/:id/:srcCur/:trgtCur', async (req, res) => {
 
     });
 
-    const targetRate = await exchange(req.params.srcCur, req.params.trgtCur);
+    const targetRate = await exchange('CAD', req.params.trgtCur);
     // const CADEUR = await exchange("CAD", "EUR")
     // const EURCAD = await exchange("EUR", "CAD")
     // const GBPCAD = await exchange("GBP", "CAD")
@@ -76,11 +76,11 @@ router.get('/past-trips/:id/:srcCur/:trgtCur', async (req, res) => {
     const userTrips = userTripData.map((userTrip) => {
       let tripData =userTrip.get({ plain: true })
 
-      tripData.hotel_cost = Number(tripData.hotel_cost)*targetRate;
-      tripData.food_cost = Number(tripData.food_cost)*targetRate;
-      tripData.ent_cost = Number(tripData.ent_cost)*targetRate;
-      tripData.misc_cost = Number(tripData.misc_cost)*targetRate;
-      tripData.transport_cost = Number(tripData.transport_cost)*targetRate;
+      tripData.hotel_cost = Math.round(Number(tripData.hotel_cost))*targetRate;
+      tripData.food_cost = Math.round(Number(tripData.food_cost))*targetRate;
+      tripData.ent_cost = Math.round(Number(tripData.ent_cost))*targetRate;
+      tripData.misc_cost = Math.round(Number(tripData.misc_cost))*targetRate;
+      tripData.transport_cost = Math.round(Number(tripData.transport_cost))*targetRate;
 
       tripData.tripCost = Math.round(Number(tripData.hotel_cost) + Number(tripData.food_cost) + Number(tripData.ent_cost) + Number(tripData.misc_cost) + Number(tripData.transport_cost));
 
@@ -90,8 +90,7 @@ router.get('/past-trips/:id/:srcCur/:trgtCur', async (req, res) => {
     res.render('past-trips', {layout:'any', 
     userTrips:userTrips,
      userData:req.session.userData,
-      logged_in:req.session.logged_in,
-      currentCurrency: req.params.trgtCur
+      logged_in:req.session.logged_in
       // rates:{CADEUR, CADGBP,CADUSD, EURCAD, GBPCAD, USDCAD}
     });
 
