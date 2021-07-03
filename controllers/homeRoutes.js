@@ -9,7 +9,21 @@ router.get('/destinations', async (req, res) => {
 });
 
 router.get('/add-trip', async (req, res) => {
-  res.render('addTrip');
+  try {
+
+    // Get all destinations from db
+    const destinationData = await Destination.findAll();
+
+    // Serialize data
+    const destinations = destinationData.map((destination) => destination.get({ plain: true}));
+
+    res.render('addTrip', {
+      destinations,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get('/add-destination', async (req, res) => {
