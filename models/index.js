@@ -39,9 +39,13 @@ Comment.belongsTo(User, {
 
 //you are goin to get all the comments of a specific user 
 
-Destination.hasMany(Comment,{
-    foreignKey:"comment_id"
-})
+// Destination.hasMany(Comment,{
+//     foreignKey:"comment_id"
+// })
+
+// Comment.belongsTo(Destination,{
+//     foreignKey:"comment_id"
+// })
 
 //you are going to get all the comments of a specific user of a certain location
 
