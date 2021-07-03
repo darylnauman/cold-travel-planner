@@ -5,59 +5,42 @@ const Comment = require('./Comment')
 
 User.belongsToMany(Destination, {
     through: Trip,
-    onDelete: "CASCADE"
+    constraints: false
 })
 
 //use the user id to get all the trips of a certain destination
 
 User.hasMany(Trip, {
     foreignKey: "user_id",
-    onDelete: "CASCADE"
+    onDelete: "CASCADE",
+    constraints: false
 })
-
-//use the user id to get all the trips of a user
-
-// Trip.belongsTo(User, {
-//     foreignKey: "trip_id",
-//     onDelete: "CASCADE"
-// })
 
 Destination.hasMany(Trip, {
     foreignKey: "destination_id",
-    onDelete: 'CASCADE'
+    constraints: false
 })
 
 Trip.belongsTo(Destination, {
-    foreignKey: "destination_id"
+    foreignKey: "destination_id",
+    constraints: false
 })
 
+Destination.hasMany(Comment, {
+    foreignKey:"destination_id",
+    constraints: false
+})
+
+Comment.belongsTo(Destination, {
+    foreignKey: "comment_id",
+     constraints: false,
+}),
 
 Comment.belongsTo(User, {
-    foreignKey: "user_id",
-    onDelete: "CASCADE"
-})
+    foreignKey: "comment_id",
+    constraints: false
+}),
 
-//you are goin to get all the comments of a specific user 
 
-// Destination.hasMany(Comment,{
-//     foreignKey:"comment_id"
-// })
-
-// Comment.belongsTo(Destination,{
-//     foreignKey:"comment_id"
-// })
-
-//you are going to get all the comments of a specific user of a certain location
-
-// has Trip{
-// foreignkeydestination
-// foreignkeydestination
-// }
-
-// belongs Trip{
-// destination
-// }
-
-// trip - has user, destination associated with it, total cost returned
 
 module.exports = {User, Destination, Trip, Comment};

@@ -100,6 +100,30 @@ router.get('/past-trips/:id/:trgtCur', async (req, res) => {
   }
 });
 
+
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    const userInfo = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Trip }],
+    });
+
+    const users = userInfo.get({ plain: true });
+
+    res.render('profile', {
+      ...users,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// router.get('/', async (req, res) => {
+//   try {
+//     // Get all Destination data
+//     const destinationData = await Destination.findAll();
+
 router.get('/destinations', async (req, res) => {
   try {
     // Get all Destination data
@@ -130,6 +154,7 @@ router.get('/update-trip/:id', async (req, res) => {
         },
       ],
     });
+
 
     const trip = tripData.get({ plain: true });
 
