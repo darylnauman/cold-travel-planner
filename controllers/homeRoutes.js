@@ -113,7 +113,7 @@ router.get('/destinations', async (req, res) => {
     console.log(getDestinations)
     console.log(dest)
   res.render('destinations', {
-    posts,
+    destination,
   logged_in: req.session.logged_in,
   });
 } catch (err) {
