@@ -35,6 +35,9 @@ User.init(
         len: [8],
       },
     },
+   comment_id: {
+     type: DataTypes.INTEGER,
+   } 
   },
   {
     hooks: {
