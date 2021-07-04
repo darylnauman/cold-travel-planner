@@ -107,8 +107,10 @@ router.get('/profile', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       include: [{ model: Trip }],
     });
+    
 
     const users = userInfo.get({ plain: true });
+
 
     res.render('profile', {
       ...users,

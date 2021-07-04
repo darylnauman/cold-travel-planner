@@ -1,5 +1,6 @@
 [
     {
+      "id": 1,
       "start_date": "June 30, 2018",
       "end_date": "July 9, 2018",
       "trip_budget": 5500.00,
@@ -12,6 +13,7 @@
       "destination_id": 4
     },
     {
+        "id": 2,
         "start_date": "August 30, 2019",
         "end_date": "September 20, 2019",
         "trip_budget": 15000.00,
@@ -25,6 +27,7 @@
  
       },
       {
+        "id": 3,
         "start_date": "June 24, 2021",
         "end_date": "June 27, 2021",
         "trip_budget": 1200.00,
@@ -38,6 +41,7 @@
    
       },
       {
+        "id": 4,
         "start_date": "May 25, 2018",
         "end_date": "June 9, 2018",
         "trip_budget": 6000.00,
@@ -50,6 +54,7 @@
         "destination_id": 1
       },
       {
+        "id": 5,
         "start_date": "January 11, 2020",
         "end_date": "January 12, 2020",
         "trip_budget": 1000.00,
