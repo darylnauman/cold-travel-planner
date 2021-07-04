@@ -210,3 +210,21 @@ color: aqua;
 text-align: center;
 }
 
+
+.comment-card{
+  width: 14rem;
+  height: 15rem;
+  color: rgb(44, 32, 15);
+  align-items: center;
+  justify-content: center;
+    background-color: rgba(196, 178, 129, 0.66);
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-radius: .3rem;   
+  /* background: url('https://images.unsplash.com/photo-1444723121867-7a241cacace9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&w=1000&q=80') fixed no-repeat; */
+  /* background: url('https://wallpaperaccess.com/full/492726.jpg') fixed no-repeat; */
+  /* background: url('https://www.wallpaperbetter.com/wallpaper/336/395/764/paris-the-beautiful-city-night-scene-2K-wallpaper.jpg') fixed no-repeat; */
+  background-size: cover;  
+}

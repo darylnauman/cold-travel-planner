@@ -6,9 +6,10 @@ const { Comment} = require('../../models');
 router.get('/',async (req, res) => {
  
   try{
-    const commentData = await Comment.findAll( {
-  
-    });
+    const commentData = await Comment.findAll();
+
+
+
     if(!commentData) {
       res.status(404).json({message: 'No comments yet! add one!'});
      
