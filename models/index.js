@@ -31,6 +31,7 @@ Destination.hasMany(Comment, {
     constraints: false
 })
 
+//get rid of this relationship if you cannot create comments or new destinations
 Comment.belongsTo(Destination, {
     foreignKey: "comment_id",
      constraints: false,
