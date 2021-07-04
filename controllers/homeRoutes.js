@@ -27,7 +27,7 @@ router.get('/add-trip', async (req, res) => {
 });
 
 router.get('/add-destination', async (req, res) => {
-  res.render('addDestination');
+  res.render('addDestination', {logged_in: req.session.logged_in});
 });
 
 router.get('/', async (req, res) => {
