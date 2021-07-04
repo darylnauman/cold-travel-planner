@@ -175,11 +175,11 @@ router.get('/update-trip/:id', async (req, res) => {
 });
 
 // displays the comments on the destination
-router.get('/destination/:id/comments', async (req, res) => {
-  
+router.get('/destinations/:id', async (req, res) => {
+  console.log('before the try!!!!!!!!!!!!!!')
   try {
   
-    // Get all Destination data
+    // Get all comments
     const commentData = await Comment.findAll({
       where:{
         destination_id: req.params.id
@@ -189,14 +189,14 @@ router.get('/destination/:id/comments', async (req, res) => {
         attributes: ['location_name'],
       }
     });
-
+console.log(commentData)
     // Serialize data
     const comments = commentData.map((comment) =>  comment.get({ plain: true}));
     
-    
-  
+    console.log(comments)
+ 
   res.render('comments', {layout:'any',
-    comments:comments,
+    comments,
   logged_in: req.session.logged_in,
   });
 } catch (err) {

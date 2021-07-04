@@ -20,9 +20,9 @@ Destination.init(
 
        //destination doesnt need the comments references, theres no way
        //to make an array of comments in here in SQL
-        comment_id: {
-            type: DataTypes.INTEGER,
- },
+//         comment_id: {
+//             type: DataTypes.INTEGER,
+//  },
 },
 
     {
