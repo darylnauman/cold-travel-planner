@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 const exchange = require('../utils/exchange');
 
 
-// adding a trip.
+// render page to add a trip
 router.get('/add-trip', async (req, res) => {
   try {
 
@@ -17,6 +17,7 @@ router.get('/add-trip', async (req, res) => {
 
     res.render('addTrip', {
       destinations,
+      userId:req.session.user_id,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -24,9 +25,11 @@ router.get('/add-trip', async (req, res) => {
   }
 });
 
-// adding a desitnation
+// render page to add a destination
 router.get('/add-destination', async (req, res) => {
-  res.render('addDestination', {logged_in: req.session.logged_in});
+  res.render('addDestination', {
+    userId:req.session.user_id,
+    logged_in: req.session.logged_in});
 });
 
 // a basic route that helps us as programmers check on the users we have/have created.
@@ -41,6 +44,7 @@ router.get('/', async (req, res) => {
 
     res.render('homepage', {
       users,
+      userId:req.session.user_id,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -56,11 +60,9 @@ router.get('/trips/:id/:trgtCur', async (req, res) => {
         user_id: req.params.id
       },
         include:{
-        model:Destination,
-        attributes: ['location_name'],
-      }     
-
-    });
+          model:Destination,
+          attributes: ['location_name']},
+        });
 
     const targetRate = await exchange('CAD', req.params.trgtCur);
     // const CADEUR = await exchange("CAD", "EUR")
@@ -69,9 +71,6 @@ router.get('/trips/:id/:trgtCur', async (req, res) => {
     // const CADGBP = await exchange("CAD", "GBP")
     // const USDCAD = await exchange("USD", "CAD")
     // const CADUSD = await exchange("CAD", "USD")
-
-    console.log(targetRate)
-
    
     const userTrips = userTripData.map((userTrip) => {
       let tripData =userTrip.get({ plain: true })
@@ -89,6 +88,7 @@ router.get('/trips/:id/:trgtCur', async (req, res) => {
 
     res.render('trips', {layout:'any', 
     userTrips:userTrips,
+    userId:req.session.user_id,
      userData:req.session.userData,
       logged_in:req.session.logged_in
       // rates:{CADEUR, CADGBP,CADUSD, EURCAD, GBPCAD, USDCAD}
@@ -112,6 +112,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
     res.render('profile', {
       ...users,
+      userId:req.session.user_id,
       logged_in: true
     });
   } catch (err) {
@@ -119,32 +120,23 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
-// router.get('/', async (req, res) => {
-//   try {
-//     // Get all Destination data
-//     const destinationData = await Destination.findAll();
-
-
 // displays all the destinations on the destination page
 router.get('/destinations', async (req, res) => {
-  
   try {
-  
     // Get all Destination data
     const destinationData = await Destination.findAll();
 
     // Serialize data
     const destinations = destinationData.map((destination) =>  destination.get({ plain: true}));
     
-    
-  
-  res.render('destinations', {layout:'any',
-    destinations:destinations,
-  logged_in: req.session.logged_in,
+    res.render('destinations', {layout:'any',
+      destinations:destinations,
+      userId:req.session.user_id,
+    logged_in: req.session.logged_in,
   });
 } catch (err) {
   res.status(500).json(err);
-}
+  }
 });
   
 router.get('/update-trip/:id', async (req, res) => {
@@ -158,15 +150,14 @@ router.get('/update-trip/:id', async (req, res) => {
       ],
     });
 
-
     const trip = tripData.get({ plain: true });
-
     // const destinationData = await Destination.findAll();
     // const destinations = destinationData.map((destination) => destination.get({ plain: true}));
 
     res.render('updateTrip', {
       ...trip, 
       // destinations,
+      userId:req.session.user_id,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -175,10 +166,8 @@ router.get('/update-trip/:id', async (req, res) => {
 });
 
 // displays the comments on the destination
-router.get('/destinations/:id', async (req, res) => {
-  console.log('before the try!!!!!!!!!!!!!!')
+router.get('/destinations/:id', async (req, res) => { 
   try {
-  
     // Get all comments
     const commentData = await Comment.findAll({
       where:{
@@ -189,23 +178,19 @@ router.get('/destinations/:id', async (req, res) => {
         attributes: ['location_name'],
       }
     });
-console.log(commentData)
+
     // Serialize data
     const comments = commentData.map((comment) =>  comment.get({ plain: true}));
-    
-    console.log(comments)
-    console.log(comments[0].destination.location_name)
  
-  res.render('comments', {layout:'any',
-    comments,
-  logged_in: req.session.logged_in,
+    res.render('comments', {layout:'any',
+      comments,
+      userId:req.session.user_id,
+    logged_in: req.session.logged_in,
   });
 } catch (err) {
   res.status(500).json(err);
 }
 });
-
-
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
