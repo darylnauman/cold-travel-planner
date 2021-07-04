@@ -49,7 +49,7 @@ router.get('/', async (req, res) => {
 });
 
 // this function renders all trips and gives a detailed list of costs, also the ablility to multiply them by the exchange rate.
-router.get('/past-trips/:id/:trgtCur', async (req, res) => {
+router.get('/trips/:id/:trgtCur', async (req, res) => {
   try {
     const userTripData = await Trip.findAll({
       where:{
@@ -87,7 +87,7 @@ router.get('/past-trips/:id/:trgtCur', async (req, res) => {
       return tripData;
     });
 
-    res.render('past-trips', {layout:'any', 
+    res.render('trips', {layout:'any', 
     userTrips:userTrips,
      userData:req.session.userData,
       logged_in:req.session.logged_in
