@@ -194,6 +194,7 @@ console.log(commentData)
     const comments = commentData.map((comment) =>  comment.get({ plain: true}));
     
     console.log(comments)
+    console.log(comments[0].destination.location_name)
  
   res.render('comments', {layout:'any',
     comments,

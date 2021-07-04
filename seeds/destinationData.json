@@ -1,17 +1,22 @@
 [
     {
+        "id": 1,
         "location_name": "Paris"
     },
     {
+        "id": 2,
         "location_name": "Montreal"
     },
     {
+        "id": 3,
         "location_name": "Toronto"
     },
     {
+        "id": 4,
         "location_name": "London"
     },
     {
+        "id": 5,
         "location_name": "Tokyo"
     }
   ]
