@@ -10,9 +10,9 @@ const newTripFormHandler = async (event) => {
   const misc_cost = document.querySelector('#misc-cost').value;
   const transport_cost = document.querySelector('#transport-cost').value;
   const destination_id = document.querySelector('#trip-destination_ID').value;
-
+  
   if (start_date && end_date && trip_budget && destination_id) {
-    
+
     const response = await fetch('/api/trips', {
       method: 'POST',
       body: JSON.stringify({
@@ -24,7 +24,7 @@ const newTripFormHandler = async (event) => {
         ent_cost,
         misc_cost,
         transport_cost,
-        destination_id,
+        destination_id
       }),  
       headers: { 'Content-Type': 'application/json' },
     });
@@ -38,5 +38,5 @@ const newTripFormHandler = async (event) => {
 }
 
 document
-  .querySelector('.new-trip-form')
+  .querySelector('.form-add')
   .addEventListener('submit', newTripFormHandler);
