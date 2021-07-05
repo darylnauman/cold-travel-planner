@@ -97,6 +97,10 @@ We delivered our original goal, but we aren't going to stop there. We hope you e
 
  # Screenshots
 
-
-<img src="/images/add-destination.png"/>
+<img src="public/images/logins.png"/>
+<img src="public/images/landing-page.png"/>
+<img src="public/images/add-destination.png"/>
+<img src="public/images/add-trip.png"/>
+<img src="public/images/trips.png"/>
+<img src="public/images/destinations.png"/>
 
