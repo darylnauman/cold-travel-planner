@@ -3,8 +3,8 @@ const newCommentFormHandler = async (event) => {
 
   const content = document.querySelector('#new-comment').value;
   
-  var pageURL = window.location.href;
-  var lastURLSegment = pageURL.substr(pageURL.lastIndexOf('/') + 1);
+  let pageURL = window.location.href;
+  let lastURLSegment = pageURL.substr(pageURL.lastIndexOf('/') + 1);
 
   if (content) {
     

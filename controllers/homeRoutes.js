@@ -180,12 +180,22 @@ router.get('/destinations/:id', async (req, res) => {
         attributes: ['location_name'],
       }
     });
-
+    const destinationData = await Destination.findAll({
+      where: {
+        id: req.params.id
+      }
+    })
+    
     // Serialize data
-    const comments = commentData.map((comment) =>  comment.get({ plain: true}));
- 
+    const comments = commentData.map((comment) => comment.get({ plain: true }));
+   const cities = destinationData.map((city) =>  city.get({ plain: true }));
+
+    console.log(cities)
+    console.log(cities[0].location_name)
+
     res.render('comments', {layout:'any',
       comments,
+      cities,
       userId:req.session.user_id,
     logged_in: req.session.logged_in,
   });
