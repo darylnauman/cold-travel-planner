@@ -10,19 +10,18 @@
     <h1>{{destination.location_name}}</h1> --}}
     <!-- In the body of the card, the desination is rendered along with TBD -->
 
-
-
-<div class="card-body" class="col-md-4" id="container">
-
-        
+    <div class="card-body" class="col-md-4" id="container">
+   
       <h5 id='content'>{{content}}</h5>
         <p id="userTag">{{userData.name}}</p>  
-    
-    {{!-- <a href="/destinations/{{id}}">
-      <p class="clickme">
-        Click to view comments
-      </p>
-    </a> --}}
-</div>
+        <button type="submit" class="btn bg-transparent btn-outline-dark btn-sm mx-2 my-1 deleteBtn" data-id="{{id}}">Delete</button> 
+        {{!-- <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg></span> --}}
+        
+        {{!-- <a href="/destinations/{{id}}">
+          <p class="clickme">
+          Click to view comments
+          </p>
+        </a> --}}
+    </div>
  
 </section>
