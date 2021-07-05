@@ -82,3 +82,60 @@ a {
     background: #43A047;
   }
   
+  #button-1 {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    background: #e62222;
+  }
+  
+  #button-1, button span {
+    transition: 200ms;
+  }
+  
+  #button-1 .text {
+    transform: translateX(35px);
+    color: white;
+    font-weight: bold;
+  }
+  
+  #button-1 .icon {
+    position: absolute;
+    border-left: 1px solid #c41b1b;
+    transform: translateX(110px);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #button-1 svg {
+    width: 15px;
+    fill: #eee;
+  }
+  
+  #button-1:hover {
+    background: #ff3636;
+  }
+  
+  #button-1:hover .text {
+    color: transparent;
+  }
+  
+  #button-1:hover .icon {
+    width: 150px;
+    border-left: none;
+    transform: translateX(0);
+  }
+  
+  #button-1:focus {
+    outline: none;
+  }
+  
