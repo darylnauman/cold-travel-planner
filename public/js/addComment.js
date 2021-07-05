@@ -18,7 +18,7 @@ const newCommentFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace(`/destinations/${lastURLSegment}`);
     } else {
       alert(response.statusText);
     }
