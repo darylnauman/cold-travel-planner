@@ -3,7 +3,7 @@ const userID = document.querySelector('#userId').dataset.id;
   // const drpSel = document.querySelector(".dropdwn").value
   const exBtn = document.querySelector(".exbtn")
 
-  var pageURL = window.location.href;
+  let pageURL = window.location.href;
   // var lastURLSegment = pageURL.substr(pageURL.lastIndexOf('trips/') + 1);
 console.log("user id",userID)
 
