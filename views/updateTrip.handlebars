@@ -1,0 +1,66 @@
+<div style="background: url(/images/travelimg.jpg)" class="page-holder bg-cover">
+  <div class="col-md-12">
+     <div class="addtrip-page">
+  <div class="form-add">
+    <div class="updatetrip-page">
+  <div class="form-update">
+    <form class="container-trip update-trip-form">
+
+    <h2 clas="m-2">Update Your {{destination.location_name}} Trip</h2>
+
+    {{!-- <h6>(for testing) Trip ID: {{id}}</h6>
+    <h6>(for testing) Trip Destination ID: {{destination_id}}</h6> --}}
+          
+      <div class="form-group m-2">
+        <label for="start-date">Start Date</label>
+        <input class="form-input" type="date" id="start-date" value="{{start_date}}"/>
+      </div>
+
+      <div class="form-group m-2">
+        <label for="end-date">End Date</label>
+        <input class="form-input" type="date" id="end-date" value="{{end_date}}"/>
+      </div>
+
+      <div class="form-group m-2">
+        <label for="trip-budget">Trip Budget</label>
+        <input class="form-input" type="number" step="0.01" id="trip-budget" value="{{trip_budget}}"/>
+      </div>
+
+      <div class="form-group m-2">
+        <label for="hotel-cost">Hotel Costs</label>
+        <input class="form-input" type="number" step="0.01" id="hotel-cost" value="{{hotel_cost}}"/>
+      </div>
+
+      <div class="form-group m-2">
+        <label for="food-cost">Food Costs</label>
+        <input class="form-input" type="number" step="0.01" id="food-cost" value="{{food_cost}}"/>
+      </div>
+
+      <div class="form-group m-2">
+        <label for="ent-cost">Entertainment Costs</label>
+        <input class="form-input" type="number" step="0.01" id="ent-cost" value="{{ent_cost}}"/>
+      </div>
+
+      <div class="form-group m-2">
+        <label for="misc-cost">Miscellaneous Costs</label>
+        <input class="form-input" type="number" step="0.01" id="misc-cost" value="{{misc_cost}}"/>
+      </div>
+
+      <div class="form-group m-2">
+        <label for="transport-cost">Tranportation Costs</label>
+        <input class="form-input" type="number" step="0.01" id="transport-cost" value="{{transport_cost}}"/>
+      </div>
+
+      <button type="submit" class="btn btn-light m-2">Submit</button>  
+      </form>
+    </form>
+    </br>
+    </div>
+    </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+  
+<script src="../../js/updateTrip.js"></script>
