@@ -188,7 +188,7 @@ router.get('/destinations/:id', async (req, res) => {
     
     // Serialize data
     const comments = commentData.map((comment) => comment.get({ plain: true }));
-   const cities = destinationData.map((city) =>  city.get({ plain: true }));
+    const cities = destinationData.map((city) =>  city.get({ plain: true }));
 
     console.log(cities)
     console.log(cities[0].location_name)
