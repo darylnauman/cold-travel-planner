@@ -212,8 +212,8 @@ text-align: center;
 
 
 .comment-card{
-  width: 14rem;
-  height: 15rem;
+  width: 60rem;
+  height: 9rem;
   color: rgb(44, 32, 15);
   align-items: center;
   justify-content: center;
@@ -227,4 +227,52 @@ text-align: center;
   /* background: url('https://wallpaperaccess.com/full/492726.jpg') fixed no-repeat; */
   /* background: url('https://www.wallpaperbetter.com/wallpaper/336/395/764/paris-the-beautiful-city-night-scene-2K-wallpaper.jpg') fixed no-repeat; */
   background-size: cover;  
+}
+
+#user.tag{
+  position: absolute;
+  margin-bottom: 0%;
+  margin-right: 0%;
+  padding-right: 0%;
+  padding-bottom: 0%;
+}
+
+
+/* ====buttons==== */
+
+#commentBtn{
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+#commentBtn:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+#commentBtn:before,#commentBtn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+#commentBtn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+#commentBtn:hover:before,#commentBtn:hover:after{
+  width:100%;
+  transition:800ms ease all;
 }
