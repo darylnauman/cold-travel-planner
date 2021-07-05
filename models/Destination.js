@@ -5,7 +5,6 @@ const sequelize = require('../config/connection');
 class Destination extends Model {
 
 }
-
 Destination.init(
     {
         id: {
@@ -17,22 +16,15 @@ Destination.init(
         location_name: {
             type: DataTypes.STRING,
             allowNull: false,
-        }
-        // comment_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'comment',
-        //         key: 'id'
-        //     }
-        // },
-        // trip_id:{
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'trip',
-        //         key: 'id'
-        //     }
         },
-    
+
+       //destination doesnt need the comments references, theres no way
+       //to make an array of comments in here in SQL
+//         comment_id: {
+//             type: DataTypes.INTEGER,
+//  },
+},
+
     {
         sequelize,
         timestamps: false,
@@ -40,6 +32,7 @@ Destination.init(
         underscored: true,
         modelName: 'destination',
     }
+
 );
 
 module.exports = Destination;

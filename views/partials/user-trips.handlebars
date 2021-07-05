@@ -1,21 +1,26 @@
 <section class="card">
 
-  <a href="/user/{{id}}">
-    <header>{{destination.location_name}}</header>
+  {{!-- <a href="/user/{{id}}"> --}}
+    <header><h3>🛫{{destination.location_name}}🛬</h3></header>
 
 
-    <div class="card-body">
+    <div class="card-body" class+"col-md-4" id="container">
         
       
-      <p>{{start_date}}</p>
-      <p>{{end_date}}</p>
-      <p>{{trip_budget}} trip budget</p>
-      <p>{{hotel_cost}} Hotel cost</p>
-      <p>{{food_cost}} food cost</p>
-      <p>{{ent_cost}}entertainment cost</p>
-      <p>{{misc_cost}}Misc costs</p>
-      <p>{{transport_cost}}Trasport cost</p>
-      <p>{{tripCost}} trip total</p>
+      <p>From:{{start_date}}</p>
+      <p>To:{{end_date}}</p>
+      <p>Trip budget:{{trip_budget}} </p>
+      <p>Hotel costs:{{hotel_cost}} </p>
+      <p>Food costs:{{food_cost}} </p>
+      <p>Entertainment costs: {{ent_cost}}</p>
+      <p>Misc costs:{{misc_cost}}</p>
+      <p>Trasport costs:{{transport_cost}}</p>
+      <h5 class="total">Trip total:{{tripCost}}</h5>
+      <button type="submit" class="btn bg-transparent btn-outline-dark btn-sm mx-2 my-1 updateBtn" data-id="{{id}}">Update</button>
+      <button type="submit" class="btn bg-transparent btn-outline-dark btn-sm mx-2 my-1 deleteBtn" data-id="{{id}}">Delete</button>
+
     </div>
-  </a>
+  {{!-- </a> --}}
 </section>
+
+{{!-- 💱 --}}

@@ -1,14 +1,21 @@
-<section class="card">
+<section class="dest-card">
   <!-- The contents of the destination card links to the destination page using the destination ID -->
-  <a href="/destinations/{{id}}">
+  
     <!-- The card contains the destination name as the card header -->
-    <header>{{location_name}}</header>
+    <header>{{destinations.location_name}}</header>
     <!-- In the body of the card, the desination is rendered along with TBD -->
 
-    {{!-- <div class="card-body">
-      <img src="/images/{{filename}}" alt="{{description}}">
-      <p>By: {{artist}}</p>
-    </div> --}}
 
-  </a>
+<div class="card-body" class+"col-md-4" id="container">
+        
+      <h5 id='location'>{{location_name}}</h5>
+          
+    
+    <a href="/destinations/{{id}}">
+      <p class="clickme">
+        Click to view comments
+      </p>
+    </a>
+</div>
+ 
 </section>

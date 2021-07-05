@@ -7,15 +7,25 @@
 
       <p>Select the destination you want to travel to:</p>
 
+      {{!-- For future development --}}
       <!-- Search -->
-
-      <div class="input-group">
+      {{!-- <div class="input-group">
       <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
          <button type="button" class="btn btn-outline-primary">search</button> <!-- NEED TO ADD QUERY TO SEARCH FROM -->
-      </div>
+      </div> --}}
 
     </header>
   </div>
+  <section class="container">
+  
+  <section class="flex-row justify-center">    
+    {{#each destinations as |destination|}}
+    {{> destination-details}}
+    {{/each}}
+  </section>
+  <div>
+    <p>
+    </p>
+  </div>
+</section>
 </div>
-
-<script src="js/addTrip.js"></script>

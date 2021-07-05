@@ -16,7 +16,11 @@ const commentData = require('./commentData.json')
     individualHooks: true,
     returning: true,
   });
-
+  await Comment.bulkCreate(commentData, {
+    individualHooks: true,
+    returning: true,
+  })
+ 
   await Destination.bulkCreate(destinationData, {
     individualHooks: true,
     returning: true,
@@ -26,11 +30,7 @@ const commentData = require('./commentData.json')
     individualHooks: true,
     returning: true,
   })
-  await Comment.bulkCreate(commentData, {
-    individualHooks: true,
-    returning: true,
-  })
- 
+
 
   process.exit(0);
 };

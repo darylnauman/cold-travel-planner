@@ -8,33 +8,29 @@ class Comment extends Model {
 
 Comment.init(
     {
-       id:{
+       id: {
            type:DataTypes.INTEGER,
            allowNull: false,
            autoIncrement:true,
            primaryKey: true
        },
-       content:{
+       content: {
            type: DataTypes.STRING,
            allowNull: false,
            defaultValue: ''
            
        },
-        user_id:{
+        user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id'
             }
         },
-        destination_id:{
+        destination_id: {
           type: DataTypes.INTEGER,
-          references: {
-              model: 'destination',
-              key: 'id'
-          }
-       }
-      },
+       },
+  },
        {
         sequelize,
         timestamps: true,

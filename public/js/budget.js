@@ -1,30 +1,17 @@
-// Entertainment expense
-const entExp = document.querySelector('').value
-// hotel Expense
-const hotelExp = document.querySelector('').value
-// food expense
-const foodExp = document.querySelector('').value
-// misc expenses
-const miscExp = document.querySelector('').value
-// tansportation expense
-const transExp = document.querySelector('').value
+
+  // const dropDown = document.querySelector("#dropdown").value
+  // const drpSel = document.querySelector(".dropdwn").value
+  const exBtn = document.querySelector(".exbtn")
+
+  const currencyExchange = (event) => {
+    event.preventDefault();
+
+    let dropDown =document.querySelector('.dropdwn').selectedOptions[0].value
+    console.log(`this is the client side: ${dropDown}`)
+    window.location.replace(`/past-trips/1/${dropDown}`);
+
+   }
+
+  exBtn.addEventListener("click",currencyExchange);
 
 
-// push the sum of the expenses into this variable. 
-let tripExp = []
-
-
-// trip expense array. use sum() to make total.
-const expArr = []
-
-var sumArray = function(expArr) {
-    let result = 0;
-  
-    for (var i = 0; i < expArr.length; i++) {
-      var currentNumber = arr[i];
-      result += currentNumber;
-    }
-  
-    return result;
-    
-  };

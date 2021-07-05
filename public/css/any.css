@@ -1,3 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap');
+
+
 body{
     background-color: antiquewhite;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'STIX Two Math', serif;
+    
+  }
+  main{
+    height: 100vh;
+    /* background: url('https://images.unsplash.com/photo-1477346611705-65d1883cee1e?dpr=0.800000011920929&auto=format&fit=crop&w=1199&h=800&q=80&cs=tinysrgb&crop=') fixed no-repeat; */
+    /* background: url('https://media.audleytravel.com/-/media/images/home/canada-and-the-usa/canada/accommodation/superhotels/emerald_lake_lodge_canada_1324041_3000x1000.jpg?q=79&w=1920&h=640') fixed no-repeat; */
+    background: url('https://live.staticflickr.com/1859/44125494851_fb403d7fb3_b.jpg') fixed no-repeat;
+    background-size: cover;
+  }
+
+   .card{
+   width: 14rem;
+   height: 28rem;
+   color: rgb(44, 32, 15);
+   /* background-image: linear-gradient(
+     #e2eafc,
+     #edf2fb, 0.4   
+     ); */
+     background-color: rgba(196, 187, 223, 0.66);
+   display: inline-flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 2rem;
+   border-radius: .3rem;   
+ }
+
+ .total{
+   margin-bottom: 0;
+   padding-bottom: 0;
+   font-weight: bolder;
+ }
+
+.user-name{
+  color: #1b212b;
+}
+
+
+ /* .card:before{
+   width: 14rem;
+   height: 28rem;
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  bottom: 0;
+  right: 0;
+  background: inherit;
+  box-shadow: inset 0 0 0 200px rgba(255,255,255,0.2);
+  filter: blur(10px);
+} */
+
+
+
+
+
+
+ /* .card{
+   display: flex;
+  width: 14rem;
+  height: 500px;
+  background: inherit;
+  justify-content: space-around;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  margin-left: -175px;
+  margin-top: -250px;
+  border-radius: 8px;
+  
+}
+.card:before{
+  width: 400px;
+  height: 550px;
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  bottom: 0;
+  right: 0;
+  background: inherit;
+  box-shadow: inset 0 0 0 200px rgba(255,255,255,0.2);
+  filter: blur(10px);
+} */
+
+/* * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+} */
+
+/* body {
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #2b1331;
+	background-image: linear-gradient(315deg, #2b1331 0%, #b9abcf 74%);
+} */
+
+.exbtn {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+		-webkit-tap-highlight-color: transparent;
+}
+
+.exbtn {
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	border: none;
+  font-family: 'STIX Two Math', serif;
+	color: rgba(255,255,255,0.5);
+	font-size: 20px;
+	border-radius: 4px;
+	box-shadow: inset 0px 3px 5px rgba(255,255,255,0.5), 0px 0px 10px rgba(0,0,0,0.15);
+	background: rgb(2,0,36);
+background: linear-gradient(45deg, rgba(2,0,36,0) 5%, rgba(255,255,255,.5) 6%, rgba(255,255,255,0) 9%, rgba(255,255,255,.5) 10%, rgba(255,255,255,0) 17%, rgba(255,255,255,.5) 19%, rgba(255,255,255,0) 21%);
+	background-size: 150%;
+	background-position: right;
+	transition: 1s;
+  padding: 0.3rem;
+}
+
+.exbtn:hover {
+	background-position: left;
+	color: white;
+	box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
+}
+
+.exbtn:focus {
+	outline: none;
+}
+
+.dropdwn {
+	width: 5rem;
+	height: 50px;
+	cursor: pointer;
+	border: none;
+  font-family: 'STIX Two Math', serif;
+	color:rgba(80, 71, 71, 0.548);
+	font-size: 20px;
+	border-radius: 4px;
+	box-shadow: inset 0px 3px 5px rgba(255,255,255,0.5), 0px 0px 10px rgba(0,0,0,0.15);
+	background: rgb(2,0,36);
+background: linear-gradient(45deg, rgba(2,0,36,0) 5%, rgba(255,255,255,.5) 6%, rgba(255,255,255,0) 9%, rgba(255,255,255,.5) 10%, rgba(255,255,255,0) 17%, rgba(255,255,255,.5) 19%, rgba(255,255,255,0) 21%);
+	background-size: 150%;
+	background-position: right;
+	transition: 1s;
+  padding: 0.3rem;
+}
+
+.dropdwn:hover {
+	background-position: left;
+	color: black;
+	box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
+}
+
+.dropdwn:focus {
+	outline: none;
+}
+
+.dest-card{
+  width: 14rem;
+  height: 15rem;
+  color: rgb(44, 32, 15);
+  align-items: center;
+  justify-content: center;
+    background-color: rgba(196, 178, 129, 0.66);
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-radius: .3rem;   
+  /* background: url('https://images.unsplash.com/photo-1444723121867-7a241cacace9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&w=1000&q=80') fixed no-repeat; */
+  background: url('https://wallpaperaccess.com/full/492726.jpg') fixed no-repeat;
+  /* background: url('https://www.wallpaperbetter.com/wallpaper/336/395/764/paris-the-beautiful-city-night-scene-2K-wallpaper.jpg') fixed no-repeat; */
+  background-size: cover;  
+}
+
+#location{
+  color: #33707a;
+  justify-content: center;
+  text-align: center;
+  margin-top: 1px;
+  background: coral;
+}
+
+.clickme{
+margin-bottom: 5px;
+color: aqua;
+text-align: center;
+}
+
+
+.comment-card{
+  width: 14rem;
+  height: 15rem;
+  color: rgb(44, 32, 15);
+  align-items: center;
+  justify-content: center;
+    background-color: rgba(196, 178, 129, 0.66);
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-radius: .3rem;   
+  /* background: url('https://images.unsplash.com/photo-1444723121867-7a241cacace9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&w=1000&q=80') fixed no-repeat; */
+  /* background: url('https://wallpaperaccess.com/full/492726.jpg') fixed no-repeat; */
+  /* background: url('https://www.wallpaperbetter.com/wallpaper/336/395/764/paris-the-beautiful-city-night-scene-2K-wallpaper.jpg') fixed no-repeat; */
+  background-size: cover;  
 }
