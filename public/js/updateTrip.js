@@ -12,7 +12,7 @@ const updateTripFormHandler = async (event) => {
 
   var pageURL = window.location.href;
   var lastURLSegment = pageURL.substr(pageURL.lastIndexOf('/') + 1);
-  console.log(lastURLSegment);
+  // console.log(lastURLSegment);
 
   if (start_date && end_date && trip_budget) {
     
