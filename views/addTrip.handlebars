@@ -17,7 +17,7 @@
 
        <div class="form-group m-2">
         <label for="trip-destination_ID">Destination</label>
-        <select id="trip-destination_ID" name="trip-destination_ID" id="destSelect"/>
+        <select id="trip-destination_ID" name="trip-destination_ID"/>
         {{#each destinations as |destination|}}
           <option value={{destination.id}}>{{destination.location_name}}</option>
         {{/each}}
