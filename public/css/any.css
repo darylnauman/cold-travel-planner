@@ -14,7 +14,8 @@ body{
     
   }
   main{
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     /* background: url('https://images.unsplash.com/photo-1477346611705-65d1883cee1e?dpr=0.800000011920929&auto=format&fit=crop&w=1199&h=800&q=80&cs=tinysrgb&crop=') fixed no-repeat; */
     /* background: url('https://media.audleytravel.com/-/media/images/home/canada-and-the-usa/canada/accommodation/superhotels/emerald_lake_lodge_canada_1324041_3000x1000.jpg?q=79&w=1920&h=640') fixed no-repeat; */
     /* background: url('https://live.staticflickr.com/1859/44125494851_fb403d7fb3_b.jpg') fixed no-repeat; */
