@@ -10,6 +10,8 @@ const newTripFormHandler = async (event) => {
   const misc_cost = document.querySelector('#misc-cost').value;
   const transport_cost = document.querySelector('#transport-cost').value;
   const destination_id = document.querySelector('#trip-destination_ID').value;
+
+  const userID = document.querySelector('#userId').dataset.id;
   
   if (start_date && end_date && trip_budget && destination_id) {
 
@@ -30,7 +32,7 @@ const newTripFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace(`/trips/${userId}/CAD`);
+      document.location.replace(`/trips/${userID}/CAD`);
     } else {
       alert(response.statusText);
     }

@@ -10,6 +10,8 @@ const updateTripFormHandler = async (event) => {
   const misc_cost = document.querySelector('#misc-cost').value;
   const transport_cost = document.querySelector('#transport-cost').value;
 
+  const userID = document.querySelector('#userId').dataset.id;
+
   var pageURL = window.location.href;
   var lastURLSegment = pageURL.substr(pageURL.lastIndexOf('/') + 1);
   // console.log(lastURLSegment);
@@ -32,7 +34,7 @@ const updateTripFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace(`/trips/${userId}/CAD`);
+      document.location.replace(`/trips/${userID}/CAD`);
     } else {
       alert(response.statusText);
     }
