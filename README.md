@@ -1,6 +1,5 @@
-# cold-travel-planner
+# Plan Your Trip
 
-<h1> The Travel Budget Planner for Trips and Layovers App.</h1>
 <p>I want to get away, I want to fly away. - Lenny Kravitz</p>
 
 # Table of Contents
