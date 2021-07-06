@@ -14,7 +14,7 @@ const newDestinationFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/destinations');
     } else {
       alert(response.statusText);
     }

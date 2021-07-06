@@ -10,7 +10,7 @@ const delButtonHandler = async (event) => {
   });
 
   if (response.ok) {
-      document.location.replace('/');
+    window.location.reload();
     } else {
       alert('Failed to delete trip');
     }
