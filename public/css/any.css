@@ -199,16 +199,17 @@ background: linear-gradient(45deg, rgba(2,0,36,0) 5%, rgba(255,255,255,.5) 6%, r
 }
 
 #location{
-  color: #33707a;
+  color: #c1e3e9;
   justify-content: center;
   text-align: center;
   margin-top: 1px;
-  background: coral;
+  background: rgb(14, 13, 13);
 }
 
 .clickme{
 margin-bottom: 5px;
 color: aqua;
+background-color: #1b212b;
 text-align: center;
 }
 
