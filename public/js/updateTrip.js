@@ -32,7 +32,7 @@ const updateTripFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace(`/trips/${userId}/CAD`);
     } else {
       alert(response.statusText);
     }

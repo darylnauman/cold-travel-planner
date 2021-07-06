@@ -24,7 +24,7 @@ body{
 
    .card{
    width: 14rem;
-   height: 28rem;
+   /*height: 28rem;*/
    color: rgb(44, 32, 15);
    /* background-image: linear-gradient(
      #e2eafc,
